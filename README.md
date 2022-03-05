@@ -1,5 +1,5 @@
 # MossZeit
-Proof-of-concept CLI use of [Moss](https://github.com/hansi-b/Moss) to solve Sudokus at [Zeit.de](https://sudoku.zeit.de).
+Proof-of-concept CLI use of [Moss](https://github.com/hansi-b/Moss) and [Selenium](https://www.selenium.dev/) to solve Sudokus at [Zeit.de](https://sudoku.zeit.de).
 
 ## Usage
 
