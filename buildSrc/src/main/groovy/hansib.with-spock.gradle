@@ -1,0 +1,20 @@
+plugins {
+	id 'groovy'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation 'org.objenesis:objenesis:3.2'
+	testImplementation 'org.spockframework:spock-core:2.1-M2-groovy-3.0'
+}
+
+testing {
+	suites {
+		test {
+			useJUnitJupiter('5.8.2')
+		}
+	}
+}

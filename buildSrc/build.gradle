@@ -1,0 +1,17 @@
+
+plugins {
+	id 'groovy-gradle-plugin'
+}
+
+repositories {
+	gradlePluginPortal()
+}
+
+
+wrapper.gradleVersion = '7.3.3'
+
+
+dependencies {
+	implementation 'com.palantir.gradle.gitversion:gradle-git-version:0.12.2'
+	implementation 'com.github.ben-manes:gradle-versions-plugin:0.39.0'
+}

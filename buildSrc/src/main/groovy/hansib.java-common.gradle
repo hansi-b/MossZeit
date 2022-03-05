@@ -1,0 +1,23 @@
+plugins {
+	id 'java'
+
+	id 'hansib.with-spock'
+	id 'hansib.with-log4j'
+
+	id 'com.palantir.git-version'
+	id 'com.github.ben-manes.versions'
+}
+
+group 'org.hansib'
+version gitVersion()
+
+repositories {
+	mavenCentral()
+}
+
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
