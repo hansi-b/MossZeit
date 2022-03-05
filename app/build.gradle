@@ -21,4 +21,5 @@ dependencies {
 
 application {
 	mainClass = 'moss_zeit.App'
+	applicationDefaultJvmArgs = [ '--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED' ]
 }
