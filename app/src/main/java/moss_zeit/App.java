@@ -55,7 +55,7 @@ public class App {
 		driver.switchTo().defaultContent();
 
 		Level l = Level.SCHWER;
-		log.debug("Using level {}", l);
+		log.info("Using Sudoku of level {} ...", l);
 		WebElement levelButton = waitForXpath(String.format("//button[text()='%s']", l));
 		new Actions(driver).moveToElement(levelButton).perform();
 		levelButton.click();
@@ -110,10 +110,11 @@ public class App {
 	public static void main(String[] args) throws InterruptedException {
 
 		String sudokuGridHtml = create().findSudokuHtml();
-
 		Sudoku sudoku = parseSudoku(sudokuGridHtml);
-		System.out.println(new AsciiPainter().draw(sudoku));
+		log.info("Found Sudoku:\n{}", () -> new AsciiPainter().draw(sudoku));
+
 		Sudoku solved = new Solver().solve(sudoku);
-		System.out.println(new AsciiPainter().draw(solved));
+		var resultMsg = String.format("%s Sudoku:%n", solved.isSolved() ? "Solved" : "Could not completely solve");
+		log.info("{}{}", () -> resultMsg, () -> new AsciiPainter().draw(solved));
 	}
 }
